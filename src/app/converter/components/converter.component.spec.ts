@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { ConverterComponent } from './converter.component';
 import { CurrencyService, ConverterService } from '../services';
@@ -13,6 +15,10 @@ describe('ConverterComponent', () => {
       providers: [
         CurrencyService,
         ConverterService
+      ],
+      imports: [
+        HttpClientModule,
+        FormsModule
       ]
     })
     .compileComponents();
