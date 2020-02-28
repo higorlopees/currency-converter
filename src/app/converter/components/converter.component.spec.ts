@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConverterComponent } from './converter.component';
-import { CurrencyService } from '../services';
+import { CurrencyService, ConverterService } from '../services';
 
 describe('ConverterComponent', () => {
   let component: ConverterComponent;
@@ -11,7 +11,8 @@ describe('ConverterComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ConverterComponent ],
       providers: [
-        CurrencyService
+        CurrencyService,
+        ConverterService
       ]
     })
     .compileComponents();
