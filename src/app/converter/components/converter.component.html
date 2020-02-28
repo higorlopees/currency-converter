@@ -22,9 +22,10 @@
 			name="currencySource"
 			class="form-control"
 			[(ngModel)]="conversion.currencySource"
-			required>
-			<option *ngFor="let currency of currencies" [value]="currency.abbreviation">
-				{{ currency.abbreviation }} = {{ currency.description }}
+			required
+			disabled>
+			<option value="EUR">
+				EUR = Euro
 			</option>
 		</select>
 		<span class="glyphicon glyphicon-arrow-right" 
@@ -42,9 +43,16 @@
 			type="submit" 
 			value="Convert"
 			class="btn btn-success"
+			data-toggle="modal"
+			data-target="#modalPrice"
 			(click)="convert()"
 			[disabled]="!conversionForm.form.valid">
-			{{ conversionResponse | json }}
 	  </form>
 	 </div>
+	 <modal-price
+		[id]="'modalPrice'"
+		[conversionResponse]="conversionResponse"
+		[conversion]="conversion"
+		(onConfirm)="init()">
+	 </modal-price>
 </div>

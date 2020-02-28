@@ -1,1 +1,42 @@
-<p>modal-price works!</p>
+<div 
+  class="modal fade" 
+  [id]="id"
+	tabindex="-1" 
+	role="dialog" 
+	aria-labelledby="modalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button 
+        	type="button" 
+        	class="close" 
+        	data-dismiss="modal" 
+        	aria-label="Close">
+        	<span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modalLabel">
+        	Price on {{ priceDate }}
+        </h4>
+      </div>
+      <div class="modal-body text-center">
+        <div>
+			<h2>
+        {{ conversion.value }} {{ conversion.currencySource }} = {{ convertedValue }} {{ conversion.currencyDestination }}
+      </h2>
+			<p>
+        1 {{ conversion.currencyDestination }} = {{ priceTo }} {{ conversion.currencySource }} / 1 {{ conversion.currencySource }} = {{ priceFrom }} {{ conversion.currencyDestination }}
+      </p>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button 
+        	type="button" 
+        	class="btn btn-success"
+          data-dismiss="modal"
+          (click)="newQuery()">
+        	New query
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
