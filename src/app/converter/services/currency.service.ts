@@ -56,5 +56,6 @@ export class CurrencyService {
       Object.assign(currency, currencyObj);
       this.currencies.push(currency);
     }
+    return this.currencies;
   }
 }
